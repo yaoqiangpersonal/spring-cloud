@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: 
+      config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yaoqiangpersonal/spring-cloud.git
+          search-paths:
+          - config-repo
+          username: yaoqiang
+          password: yaoqiangpersonal@gmail.com
+     
+server: 
+  port: 7001
+  
+
