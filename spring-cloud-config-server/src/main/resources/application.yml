@@ -1,0 +1,29 @@
+
+
+spring:
+  application:
+    name: 
+      config-server
+  cloud:
+    config:
+      server:
+        git:
+          #配置文件存放位置
+          uri: https://github.com/yaoqiangpersonal/spring-cloud.git
+          #子目录
+          search-paths:
+          - config-repo
+          #HTTP方式，需要用户名和密码
+          username: yaoqiang
+          password: yaoqiangpersonal@gmail.com
+  #访问需要用户名和密码
+  security:
+    user:
+      name: user
+      password: user
+
+    
+ 
+server: 
+  port: 7001
+  

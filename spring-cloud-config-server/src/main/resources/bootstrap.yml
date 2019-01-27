@@ -1,0 +1,9 @@
+encrypt:
+  key-store:
+    location: classpath:config-server.JKS
+    alias: config-server
+    password: 111111
+    secret: 222222
+
+  
+

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: didispace
+  cloud:
+    config:
+      #环境配置
+      profile: dev
+      #分支
+      label: master
+      #配置的路劲
+      uri:
+      - http://localhost:7001/
+      #需要用户名和密码
+      username: user
+      password: user
+server:
+  port: 7003
+  
+

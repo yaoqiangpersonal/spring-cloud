@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: 
+      feign-consumer
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: http://localhost:8083/user/1
+        predicates:
+        - Path=/feign
+     
+server: 
+  port: 9001
+feign: 
+  hystrix: 
+    enabled: true
+
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:1111/eureka/
