@@ -4,6 +4,10 @@ spring:
   application:
     name: 
       config-server
+      
+
+
+
   cloud:
     config:
       server:
@@ -16,14 +20,26 @@ spring:
           #HTTP方式，需要用户名和密码
           username: yaoqiang
           password: yaoqiangpersonal@gmail.com
+      #失败快速响应
+      fail-fast: true
   #访问需要用户名和密码
   security:
     user:
       name: user
       password: user
 
-    
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:1111/eureka/
  
 server: 
   port: 7001
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - bus-refresh
   

@@ -1,4 +1,4 @@
-package com.cloud.spring.config;
+package com.cloud.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,11 +13,13 @@ import feign.Feign;
  * @author yaoqiang
  *
  */
-
+@Configuration
 public class DisableHystrixConfiguration {
 	
 	
 
+	@Bean
+	@Scope("property")
 	public Feign.Builder feignBuilder(){
 		return Feign.builder();
 	}

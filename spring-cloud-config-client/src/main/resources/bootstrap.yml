@@ -4,16 +4,34 @@ spring:
   cloud:
     config:
       #环境配置
-      profile: dev
+      profile: prod
       #分支
       label: master
       #配置的路劲
       uri:
       - http://localhost:7001/
+
       #需要用户名和密码
       username: user
       password: user
+      
+      discovery:
+        enabled: true
+        service-id: config-server
+    
 server:
   port: 7003
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:1111/eureka/
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - bus-refresh
+      
   
 
