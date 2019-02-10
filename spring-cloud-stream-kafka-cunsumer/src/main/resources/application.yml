@@ -1,0 +1,26 @@
+server:
+  port: 8091
+
+
+spring:
+  application:
+    name: input-demo
+  cloud: 
+    stream:
+        #该参数指定了当前消费者的总实例数量
+        instanceCount: 1
+        #该参数设置当前实例的索引号，从0开始，最大值为-1
+        instanceIndex: 0
+        kafka:
+          binder:
+            brokers: localhost:9092
+            zk-nodes: localhost:2182
+            auto-add-partitions: true
+            auto-create-topics: true
+            min-partition-count: 1
+        bindings:
+          input: 
+            group: s1
+            consumer: 
+              concurrency: 1
+              partitioned: false
