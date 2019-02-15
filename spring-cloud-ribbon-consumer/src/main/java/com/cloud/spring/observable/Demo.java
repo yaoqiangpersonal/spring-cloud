@@ -4,6 +4,7 @@ import rx.Observable;
 import rx.Subscriber;
 
 public class Demo {
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		Observable<String> observable = Observable.create(Demo::demo);
 		Subscriber<String> subscriber = new Subscriber<String>() {

@@ -1,22 +1,15 @@
 package com.cloud.spring.service;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.context.annotation.Bean;
 import org.springframework.integration.core.MessageSource;
-import org.springframework.integration.support.MessageBuilder;
-import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.GenericMessage;
 
-import com.cloud.spring.custom.SinkOutput;
 
 import org.springframework.integration.annotation.*;
 

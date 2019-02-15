@@ -2,16 +2,30 @@ spring:
   application:
     name: 
       feign-consumer
-  cloud:
-    gateway:
-      routes:
-      - id: path_route
-        uri: http://localhost:8083/user/1
-        predicates:
-        - Path=/feign
+
+security:
+  oauth2:
+    client:
+      scope:
+      - read
+      clientId: client1
+      clientSecret: client1-secret
+      accessTokenUri:  http://localhost:4040/oauth/token
+      userAuthorizationUri: http://localhost:4040/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:4041/oauth/check_token
+      
+
+    
      
 server: 
   port: 9001
+  servlet:
+    context-path: /client1
+
+
+
+#开启容错  
 feign: 
   hystrix: 
     enabled: true

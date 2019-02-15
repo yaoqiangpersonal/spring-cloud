@@ -18,9 +18,11 @@ public class UserObservableCommand extends HystrixObservableCommand<User>{
 		this.id=id;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Observable<User> construct() {
-		return Observable.create(s->{
+		return 
+				Observable.create(s->{
 			try {
 				if (s.isUnsubscribed()) {
 					User user = restTemplate.getForObject("http://USER-SERVICE/users/{1}", User.class, id);

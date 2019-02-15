@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: authorization-server
+server:
+  port: 4050
+  servlet:
+    context-path: /server
+logging:
+   file: F:\demo\pdwy-task.log
+   file.max-size: 20MB
+   pattern: 
+      console: "%d{yyyy-MM-dd HH:mm:ss} -%-4r [%t] %-5level %logger{36} - %msg%n"
+   level:
+     root: DEBUG
+     org.springframework.web: DEBUG
+     org.hibernate: DEBUG
+     com.zte: info

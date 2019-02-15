@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: resource-server
+server:
+  port: 4052
+  servlet:
+    context-path: /client2
+security:
+  oauth2:
+    client: 
+      scope:
+      - all
+      #本application的clientId
+      clientId: client2
+      #本application的clientSecret
+      clientSecret: client2-secret
+      #获取令牌的uri，如果是使用的密码模式
+      accessTokenUri:  http://localhost:4050/server/oauth/token
+      #认证uri通过这个uri,可以获取到授权码，一般这个uri用于授权码模式
+      userAuthorizationUri: http://localhost:4050/server/oauth/authorize
+    resource:
+      #通过此配置可以获取到服务端的公匙，来解析返回的jwt
+      jwt: 
+        key-uri: http://localhost:4050/server/oauth/token_key
+      #通过此配置，可以通过这个uri解析token 并返回用户信息
+      #token-info-uri: http://localhost:4040/oauth/check_key
+logging:
+   file: F:\demo\pdwy-task.log
+   file.max-size: 20MB
+   pattern: 
+      console: "%d{yyyy-MM-dd HH:mm:ss} -%-4r [%t] %-5level %logger{36} - %msg%n"
+   level:
+     root: DEBUG
+     org.springframework.web: DEBUG
+     org.hibernate: DEBUG
+     com.zte: info
+
