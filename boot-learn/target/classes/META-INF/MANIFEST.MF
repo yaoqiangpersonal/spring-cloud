@@ -1,10 +1,6 @@
 Manifest-Version: 1.0
+Build-Jdk-Spec: 13
 Implementation-Title: spring-cloud-pom
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: yaoqiang
-Implementation-Vendor-Id: com.cloud.spring
-Build-Jdk: 1.8.0_172
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/pom
 Created-By: Maven Integration for Eclipse
 
