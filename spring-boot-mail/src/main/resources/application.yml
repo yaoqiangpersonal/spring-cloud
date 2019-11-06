@@ -1,0 +1,23 @@
+spring: 
+  mail:
+    host: smtp.qq.com
+    username: 562456140@qq.com
+    password: tpatdvybmfdubbcd
+    default-encoding: UTF-8
+    port: 465
+    properties: 
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+      mail.debug: true
+      
+  datasource:
+    username: root
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://103.243.24.122:3306/batch?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    schema:
+    - classpath:/org/springframework/batch/core/schema-mysql.sql
+  #batch配置
+  batch:
+    initialize-schema: always
+    job:
+      enabled: false
