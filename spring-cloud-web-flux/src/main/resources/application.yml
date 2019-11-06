@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: web-flux
+
+logging:
+   file: F:\demo\pdwy-task.log
+   file.max-size: 20MB
+   pattern: 
+      console: "%d{yyyy-MM-dd HH:mm:ss} -%-4r [%t] %-5level %logger{36} - %msg%n"
+   level:
+     root: info
+     org.springframework.web: debug
+     org.hibernate: info
+     com.zte: info
+
